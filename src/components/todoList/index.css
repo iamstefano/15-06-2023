@@ -1,8 +1,8 @@
 .TodoList {
   margin: 20px;
   overflow-y: scroll;
-  height: 400px;
-  width: 400px;
+  height: 700px;
+  width: 420px;
 }
 
 .TodoList__info {
@@ -26,7 +26,7 @@
 }
 
 .TodoList Button :hover {
-  background-color: #a82d00;
+  background-color: #ff7f50, 125, 80);
   transition: border-color 0.35s;
 }
 
