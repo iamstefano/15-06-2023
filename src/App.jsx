@@ -12,9 +12,9 @@ function App() {
       {/* <Navbar /> */}
       <Title />
       <div className="todoList__wrapper">
-        <TodoList emoji={emoji} />
-        <TodoList emoji={emoji} />
-        <TodoList emoji={emoji} />
+        <TodoList emoji={emoji} filterChars={16} />
+        <TodoList emoji={emoji} filterChars={24} />
+        <TodoList emoji={emoji} filterCompleted />
       </div>
     </div>
   );

@@ -3,12 +3,21 @@ import { useState } from "react";
 import TodoItem from "../todoItem";
 import { todos } from "../../mocks/todos";
 
-/* import { useState } from "react"; */
-
-const TodoList = ({ emoji }) => {
+const TodoList = ({
+  emoji,
+  filterChars,
+  filterCompleted,
+  filterUncompleted,
+}) => {
   const [todoList, setTodoList] = useState(todos);
-  const onHandleTodosFilter = (nChars) => {
-    setTodoList(todoList.filter((todo) => todo.title.length <= nChars));
+  const onHandleTodosFilter = (numChars) => {
+    setTodoList(todoList.filter((todo) => todo.title.length <= numChars));
+  };
+  const onHandleTodosFilterComplete = () => {
+    setTodoList(todoList.filter((todo) => todo.completed === true));
+  };
+  const onHandleTodosFilterUncomplete = () => {
+    setTodoList(todoList.filter((todo) => todo.completed !== true));
   };
 
   const onClearFilter = () => setTodoList(todos);
@@ -21,9 +30,17 @@ const TodoList = ({ emoji }) => {
       </div>
       <hr />
       <div className="TodoList__buttons">
-        <button onClick={() => onHandleTodosFilter(16)}>Filtra per 16</button>
-        <button onClick={() => onHandleTodosFilter(24)}>Filtra per 24</button>
-        <button onClick={() => onHandleTodosFilter(32)}>Filtra per 32</button>
+        <button onClick={() => onHandleTodosFilter(filterChars)}>
+          Filtra per {filterChars}
+        </button>
+        <button onClick={() => onHandleTodosFilterComplete(filterCompleted)}>
+          Filtra task completati
+        </button>
+        <button
+          onClick={() => onHandleTodosFilterUncomplete(filterUncompleted)}
+        >
+          Filtra task incompleti
+        </button>
         <button onClick={onClearFilter}>Clear</button>
       </div>
 

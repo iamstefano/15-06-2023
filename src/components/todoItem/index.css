@@ -1,6 +1,5 @@
 .TodoItem {
   width: 100%;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -27,4 +26,20 @@
 
 .TodoItem input[type="checkbox"]:checked {
   background-color: #fa8f68c4;
+}
+
+.TodoItem__p {
+  cursor: pointer;
+}
+
+.completed {
+  background-color: #cf4040;
+  text-decoration: line-through;
+  opacity: 0.5;
+  transition: background 400ms;
+}
+
+.completed:hover {
+  opacity: 1;
+  background-color: #db6060;
 }
