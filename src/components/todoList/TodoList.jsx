@@ -1,7 +1,8 @@
+import "./index.css";
 import { useState } from "react";
 import TodoItem from "../todoItem";
 import { todos } from "../../mocks/todos";
-import "./index.css";
+
 /* import { useState } from "react"; */
 
 const TodoList = ({ emoji }) => {

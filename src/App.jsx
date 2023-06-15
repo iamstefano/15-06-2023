@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+/* import Navbar from "./components/navbar"; */
 import Title from "./components/title";
 import TodoList from "./components/todoList";
 /* import { todos } from "./mocks/todos"; */
@@ -11,9 +11,11 @@ function App() {
     <div className="App">
       {/* <Navbar /> */}
       <Title />
-      <TodoList emoji={emoji} />
-      <TodoList emoji={emoji} />
-      <TodoList emoji={emoji} />
+      <div className="todoList__wrapper">
+        <TodoList emoji={emoji} />
+        <TodoList emoji={emoji} />
+        <TodoList emoji={emoji} />
+      </div>
     </div>
   );
 }
